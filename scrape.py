@@ -3,19 +3,13 @@
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
-import matplotlib.pyplot as plt
 import asyncio
-import time
-from pandas.plotting import parallel_coordinates
 import aiohttp
-from itertools import chain
 import datetime
 
 
 base_url = "https://results.chicagomarathon.com/2023/"
 url = f"{base_url}?pid=list&pidp=start&num_results=1000"
-r = requests.get(url)
-
 
 def get_results_table_records(
     base_url: str = base_url,
@@ -142,6 +136,7 @@ def get_results(record_url: str, base_url: str = base_url):
     results = {"headers": table_headers, "rows": rows}
     return part_rows, results
 
+
 def result_to_df(result: dict, part_rows):
     cols = [x[0] for x in part_rows]
     vals = [x[-1] for x in part_rows]
@@ -157,7 +152,6 @@ def result_to_df(result: dict, part_rows):
     # Fill all the NaNs with the previous value
     df = df.ffill()
     return df
-
 
 
 async def get_results_async(
@@ -194,7 +188,7 @@ async def get_results_async(
             print(f"{datetime.datetime.now()}: Finished job {job_number}")
             results_df = result_to_df(results, part_rows)
             results_df.to_parquet(f"data/results_{job_number}.parquet", index=False)
-            return True 
+            return True
 
 
 async def main_results(
@@ -215,4 +209,5 @@ async def main_results(
 
 
 if __name__ == "__main__":
+    asyncio.run(main_records())
     asyncio.run(main_results())
