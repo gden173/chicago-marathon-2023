@@ -16,6 +16,11 @@ current world record marathon time of `02:00:30` and
 the 2024 Paris Olympic Marathon Championt [Siffan Hassan](https://en.wikipedia.org/wiki/Sifan_Hassan) ran the
 Second fastest recorded time for women.
 
+## Data 
+
+All data is located in the `data/` directory. The data is stored in a Parquet files file, 
+with the aggregated parquet file being `data/chicago-maraton-2023.parquet`.
+
 
 ## Attribution
 
