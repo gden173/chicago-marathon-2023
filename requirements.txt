@@ -2,4 +2,5 @@ pandas
 bs4
 requests
 aiohttp
+fastparquet
 

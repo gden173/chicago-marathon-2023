@@ -4,6 +4,9 @@
 <!--toc:start-->
 - [Marathon Cheaters](#marathon-cheaters)
     - [Description](#description)
+        - [Data](#data)
+        - [Location](#location)
+        - [Scraping Script](#scraping-script)
     - [Attribution](#attribution)
 <!--toc:end-->
 
@@ -18,8 +21,36 @@ Second fastest recorded time for women.
 
 ## Data 
 
-All data is located in the `data/` directory. The data is stored in a Parquet files file, 
-with the aggregated parquet file being `data/chicago-maraton-2023.parquet`.
+### Location
+
+All data is located in the `data/` directory. The data is stored in a Parquet files, 
+with the aggregated parquet file being `data/chicago-marathon-results-2023.parquet`.
+
+### Format 
+
+The data is in the format 
+ - 'Name (CTZ)' 
+ - 'Age Group'
+ - 'Bib Number' 
+ - 'City' 
+ - `State'
+ - 'Gender' 
+ - 'Short'
+ - 'Split'
+ - 'Time Of Day'
+ - 'Time'
+ - 'Diff'
+ - 'min/km'
+ - 'km/h'
+ - 'min/mile'
+ - 'miles/h'
+
+### Scraping Script 
+
+The script that scrapes the data is located in `[scrape.py](scrape.py)`. The
+script uses the `requests` and `beautifulsoup4` libraries to scrape the data,
+it relies on the [`chicago_marathon_records.csv`](chicago_marathon_records.csv)
+file to get the list of urls to scrape.
 
 
 ## Attribution
