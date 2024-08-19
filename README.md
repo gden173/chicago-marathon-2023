@@ -1,5 +1,6 @@
-
 # Chicago Marathon 2023 
+
+<img float="right;" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstaticg.sportskeeda.com%2Feditor%2F2023%2F10%2Fc0968-16968168204928-1920.jpg&f=1&nofb=1&ipt=e54d610e2a5f2370314d40077ec824f2f6c9dd6145030e9d7d3e03da016613e8&ipo=images" width="200">
 
 <!--toc:start-->
 - [Marathon Cheaters](#marathon-cheaters)
@@ -25,6 +26,10 @@ Second fastest recorded time for women.
 
 All data is located in the `data/` directory. The data is stored in a Parquet files, 
 with the aggregated parquet file being `data/chicago-marathon-results-2023.parquet`.
+
+The data is also available from Kaggle  
+
+- [2023 Chicago Marathon Results](https://www.kaggle.com/datasets/gabrieldennis/2023-chicago-marathon-results/data)
 
 ### Format 
 
